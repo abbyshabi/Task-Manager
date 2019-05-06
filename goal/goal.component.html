@@ -1,0 +1,16 @@
+<div class="container">
+<div class="box" *ngFor='let employee of employeess ; let i = index'>
+  <p> {{employee.name}}</p>
+ 
+  <button class="btt" (click)='toogleDetails(i)'>View Employee</button>
+  <app-goal-details *ngIf="employee.showDescription" [employee] ='employee'  ></app-goal-details>
+
+ 
+  <!-- <button class="btt" (click)='toogleDetails(i)'>View Quote</button>
+  <app-goal-details *ngIf="employee.showDescription" [quote] ='quote' (isComplete)= 'completeQuote($event,i)' (toDelete)= 'deleteQuote($event,i)'></app-goal-details> -->
+  </div>
+</div>
+<div class="container" style="padding-top:50px;">
+  <app-goal-form (addEmployee) = "addNewEmployee($event)"></app-goal-form>
+
+</div>

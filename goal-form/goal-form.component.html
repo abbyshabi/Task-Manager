@@ -1,0 +1,25 @@
+<div class="container-fluid">
+        <div class="row">
+            <form #goalForm='ngForm'>
+                <div class="form-group">
+    
+                    <label for="name">Name</label>
+                    <input type="text" required class="form-control" id="name" [(ngModel)]="newEmployee.name" name="name">
+                <!--Testing  to see if we get data-->
+                    Display {{newEmployee.name}}
+    
+                </div>
+                <div class="form-group">
+    
+                    <label for="task">Task</label>
+                    <textarea class="form-control" id="task" rows="1" required [(ngModel)]="newEmployee.task" name="task"></textarea>
+                    <!--Testing  to see if we get data-->
+                    Display {{newEmployee.task}}
+                </div>
+                <form (ngSubmit)='submitEmployee()' #employeeForm='ngForm'>
+                <button type="submit" class="btn btn-success btn-lg">Add Task</button>
+                </form>
+            </form>
+        </div>
+    </div>
+    
